@@ -1,47 +1,50 @@
-	package Model;
-
+package Model;
+import java.util.ArrayList;
 public class User {
 		
-		private int ID; 
-		private String UserName; 
-		private String Email; 
-		private String Password; 
-
-		public User (int ID, String UserName, String Email, String Password) {
-			this.ID = ID; 
-			this.UserName = UserName; 
-			this.Email = Email; 
-			this.Password = Password; 
+		private String userName; 
+		private String email; 
+		private String password; 
+		
+		public User (String userName, String email, String password) {
+		
+			this.userName = userName; 
+			this.email = email; 
+			this.password = password; 
 			
 		}
 		
-		public int getID() { 
-			return ID; 
-		}
-		
 		public String getUserName() { 
-			return UserName;
+			return userName;
 		}
 		
-		public void setUserName(String UserName) {
-			this.UserName = UserName; 
+		public void setUserName(String userName) {
+			this.userName = userName; 
 		}
 		
 		public String getEmail() { 
-			return Email; 
+			return email; 
 		}
 		
-		public void setEmail(String Email) {
-			this.Email = Email; 
+		public void setEmail(String email) {
+			this.email = email; 
 		}
 		
 		public String getPassword() { 
-			return Password; 
+			return password; 
 		}
 		
-		public void setPassword(String Password) { 
-			this.Password = Password; 
+		public void setPassword(String password) { 
+			this.password = password; 
 		}
 		
-}
+		private ArrayList<Credential> credentials = new ArrayList<Credential>(); 
+		
+		public void addCredential(Credential credential) {
+			
+			this.credentials.add(credential);
+			
+		}
 
+
+}
