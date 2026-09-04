@@ -50,7 +50,7 @@ public class Main {
 				System.out.println("New Credential Email: ");
 				String credentialEmail = user.nextLine();
 				
-				System.out.println("New Credential Password: ");
+				System.out.println("New Credential Password: "); 
 				String credentialPassword= user.nextLine();
 								
 				Credential newCredential = new Credential(credentialName, credentialUserName, credentialEmail, credentialPassword);
@@ -61,7 +61,14 @@ public class Main {
  
 				continue; 
 				
-				case "Library" : System.out.println("Library is displayed");
+				case "Library" : 
+					
+					newUser.displayCredentials();
+					System.out.println("Which Credential would you like to select? ");
+					String targetName = user.nextLine(); 
+					
+					newUser.selectCredentials(targetName);
+					
 				running = false;
 				break; 
 				

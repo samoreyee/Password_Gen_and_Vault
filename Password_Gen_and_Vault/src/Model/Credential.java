@@ -2,48 +2,48 @@ package Model;
 
 public class Credential {
 	
-	private String Name; 
-	private String UserName;
-	private String Email; 
-	private String Password; 
+	private String credentialName; 
+	private String credentialUserName;
+	private String credentialEmail; 
+	private String credentialPassword; 
 	
-	public Credential(String Name, String UserName, String Email, String Password) {
-		this.Name= Name;
-		this.UserName = UserName;
-		this.Email = Email; 
-		this.Password = Password; 
+	public Credential(String credentialName, String credentialUserName, String credentialEmail, String credentialPassword) {
+		this.credentialName= credentialName;
+		this.credentialUserName = credentialUserName;
+		this.credentialEmail = credentialEmail; 
+		this.credentialPassword = credentialPassword; 
 	
 	}
 	
-	public String getName() {
-		return Name; 
+	public String getCredentialName() {
+		return credentialName; 
 	}
 	
-	public void setName(String Name) { 
-		this.Name = Name; 	
+	public void setCredentialName(String credentialName) { 
+		this.credentialName = credentialName; 	
 	}
 	
-	public String getUserName() { 
-		return UserName; 
+	public String getCredentialUserName() { 
+		return credentialUserName; 
 	}
 	
-	public void setUserName(String Username) { 
-		this.UserName = Username; 
+	public void setCredentialUserName(String credentialUserName) { 
+		this.credentialUserName = credentialUserName; 
 	}
 	
-	public String getEmail() {
-		return Email; 
+	public String getCredentialEmail() {
+		return credentialEmail; 
 	}
 
-	public void setEmail(String Email) {
-		this.Email = Email; 
+	public void setCredentialEmail(String credentialEmail) {
+		this.credentialEmail = credentialEmail; 
 	}
 	
-	public String getPassword() { 
-		return Password;
+	public String getCredentialPassword() { 
+		return credentialPassword;
 	}
 	
-	public void setPassword(String Password) {
-		this.Password=Password; 
+	public void setCredentialPassword(String credentialPassword) {
+		this.credentialPassword=credentialPassword; 
 	}
 }

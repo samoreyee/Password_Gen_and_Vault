@@ -45,6 +45,26 @@ public class User {
 			this.credentials.add(credential);
 			
 		}
+		
+		public void displayCredentials() { 
+			for(int i= 0; i < credentials.size() ; i++) {
+				
+				System.out.println(credentials.get(i).getCredentialName());
+				
+				
+			}
+		}
+		
+		public void selectCredentials(String targetName) { 
+			for (int i= 0; i < credentials.size() ; i++) {
+				if (credentials.get(i).getCredentialName().equals(targetName)) {
+		           System.out.println("Credential Found!");
+					return ; 
+		        }
+				
+			
+			}
+		}
 
 
 }
