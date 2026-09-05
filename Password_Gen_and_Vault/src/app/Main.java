@@ -10,102 +10,152 @@ public class Main {
 		
 		User newUser = null;
 		boolean running1 = true;
-	while(running1) {
-		System.out.println("Input User Name: ");
-		
-		String userName = user.nextLine();
-		
-		if (userName.isEmpty()) {
-	        System.out.println("Username cannot be empty.");
-	        
-;
-	    }
-		
-		System.out.println("Input Email: ");
-		
-		String userEmail = user.nextLine();
-		
-		if (userEmail.isEmpty()) {
-	        System.out.println("Email cannot be empty.");
-	  
-	    }
-		
-		System.out.println("Input Password: ");
-		
-		String password = user.nextLine();
-		
-		if (password.isEmpty()) {
-	        System.out.println("Username cannot be empty.");
-	       
-	    }
-		
-		newUser = new User(userName, userEmail, password);
-
-		System.out.println("Profile Created!");
+		String userName;
+		String userEmail;
+		String password;
 		
 		System.out.println("********************  Welcome to LockedIn  ********************");
-		
-		running1 = false;
 
+//users userName
+		
+	while(true) {
+		System.out.print("Input User Name: ");
+		userName = user.nextLine();
+		if (userName.isEmpty()) {
+	        System.out.print("Username cannot be empty.");
+	    }
+		else {
+			break;
+		}
+	}
+
+//users email
+	
+	while(true) {
+		System.out.print("Input Email: ");
+		 userEmail = user.nextLine();
+		if (userEmail.isEmpty()) {
+	        System.out.println("Email cannot be empty.");
+	    }
+		else {
+			break;
+		}
 	}
 	
+//user password
+	
+	while(true) {
+		System.out.print("Input Password: ");
+		password = user.nextLine();
+		if (password.isEmpty()) {
+	        System.out.println("Password cannot be empty.");
+	    }
+		else {
+			break;
+		}
+	}
+//matching it to user class
+	
+		newUser = new User(userName, userEmail, password);
+		System.out.println("");
+		System.out.println("Profile Created!");
+		
+// main homepage where you select what you want to do 
+		
+		
 	
 		boolean running = true;
 		
+//main option 
+		
 		while(running) {			
-			System.out.println("Choose an option : Create Password or Create a new Credential or Library or Sign out");
-			
+			System.out.println(
+			        "\nChoose an Option:" + "\n1) Create Password" + "\n2) Create a new Credential" +"\n3) Library" + "\n4) Sign out" );
 			String option = user.nextLine(); 
+
+// the choice loop begins
 			
-			switch(option) {
-			
-				case "Password" : System.out.println("Password Gen App Opens");
-				
+		switch(option) {
+
+// I need to create a password gen class to connect here
+	//case 1 
+				case "1" : System.out.println("Password Gen App Opens");
 				break;
+	
+// Creating a new Credential Menu
 				
-				case "Credential" : 
-				System.out.println("New Credential Name: ");
-				String credentialName = user.nextLine();
-				
+	//case 2 
+				case "2" : 	
+					
+					String credentialName;
+					String credentialUserName;
+					String credentialEmail;
+					String credentialPassword;
+					
+			while(true) {		
+				System.out.print("New Credential Name: ");
+				credentialName = user.nextLine();	
 				if (credentialName.isEmpty()) {
 			        System.out.println("Name cannot be empty.");
-			        continue;
+				}
+			        else {
+			        	break;
+			        }
 			    }
-				
-				System.out.println("New Credential User Name: ");
-				String credentialUserName = user.nextLine();
+			
+//Creating Credential User Name
+			
+			while(true) {	
+				System.out.print("New Credential User Name: ");
+				credentialUserName = user.nextLine();
 				
 				if (credentialUserName.isEmpty()) {
 			        System.out.println("Username cannot be empty.");
-			        continue;
 			    }
-				
-				System.out.println("New Credential Email: ");
-				String credentialEmail = user.nextLine();
-				
+				else {
+					break;
+				}
+			}
+			
+//Creating Credential Email			
+			
+			while (true) { 
+				System.out.print("New Credential Email: ");
+				credentialEmail = user.nextLine();
 				if (credentialEmail.isEmpty()) {
 			        System.out.println("Email cannot be empty.");
-			        continue;
 			    }
+				else {
+					break;
+				}
+			}
 				
-				System.out.println("New Credential Password: "); 
-				String credentialPassword= user.nextLine();
-				
+//Creating Credential Password		
+			
+			while (true){
+				System.out.print("New Credential Password: "); 
+				credentialPassword= user.nextLine();
 				if (credentialPassword.isEmpty()) {
-			        System.out.println("Username cannot be empty.");
-			        continue;
+			        System.out.println("Password cannot be empty.");
 			    }
-								
-				Credential newCredential = new Credential(credentialName, credentialUserName, credentialEmail, credentialPassword);
+				else {
+					break;
+				}
+			}
 
+//logging the results in the array list in User class
+											
+				Credential newCredential = new Credential(credentialName, credentialUserName, credentialEmail, credentialPassword);
 				newUser.addCredential(newCredential); 
-				
-				System.out.println("Locked in");
- 
+				System.out.println("");
+				System.out.println("********************  LockedIn  ********************");
+				System.out.println("");
+
 				continue; 
-				
-				case "Library" : 
-					
+
+// opening up the library of the credential you made
+	//case 3
+				case "3" : 
 					newUser.displayCredentials();
 					System.out.println("Which Credential would you like to select? ");
 					String targetName = user.nextLine(); 
@@ -116,13 +166,15 @@ public class Main {
 					
 					newUser.selectCredentials(targetName);
 					
-				running = false;
 				break; 
 				
-				case "Sign Out" : System.out.println("Signed Out.");		
+//signing out of program 
+	//case 4 
+				case "4" : System.out.println("Signed Out.");		
 				running = false;
 				break; 
-				
+//invalid choice 
+	//case 5 
 				default: System.out.println("Invalid");
 				break;
 
@@ -132,5 +184,4 @@ public class Main {
 		
 		user.close(); 
 	}
-
 }

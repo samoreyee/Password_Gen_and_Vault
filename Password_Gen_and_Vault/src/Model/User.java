@@ -58,13 +58,16 @@ public class User {
 		public void selectCredentials(String targetName) { 
 			for (int i= 0; i < credentials.size() ; i++) {
 				if (credentials.get(i).getCredentialName().equals(targetName)) {
+				System.out.println("");
 		           System.out.println("Credential Found!");
 					return ; 
 		        }
 				
-			
 			}
+	           System.out.println("No Credential Found!");
+
 		}
+		
 
 
 }
