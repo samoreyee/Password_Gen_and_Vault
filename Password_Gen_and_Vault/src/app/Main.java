@@ -9,7 +9,6 @@ public class Main {
 		Scanner user = new Scanner(System.in); 
 		
 		User newUser = null;
-		boolean running1 = true;
 		String userName;
 		String userEmail;
 		String password;
@@ -27,6 +26,7 @@ public class Main {
 		else {
 			break;
 		}
+		
 	}
 
 //users email
@@ -151,7 +151,7 @@ public class Main {
 				System.out.println("********************  LockedIn  ********************");
 				System.out.println("");
 
-				continue; 
+				break; 
 
 // opening up the library of the credential you made
 	//case 3

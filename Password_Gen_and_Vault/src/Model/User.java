@@ -48,12 +48,11 @@ public class User {
 		
 		public void displayCredentials() { 
 			for(int i= 0; i < credentials.size() ; i++) {
+				System.out.println((1 + i + ")")+ (" ") + credentials.get(i).getCredentialName());}
 				
-				System.out.println(credentials.get(i).getCredentialName());
 				
-				
-			}
 		}
+			
 		
 		public void selectCredentials(String targetName) { 
 			for (int i= 0; i < credentials.size() ; i++) {
@@ -67,6 +66,8 @@ public class User {
 	           System.out.println("No Credential Found!");
 
 		}
+		
+		
 		
 
 
