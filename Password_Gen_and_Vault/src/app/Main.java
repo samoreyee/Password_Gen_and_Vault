@@ -144,7 +144,7 @@ public class Main {
 		        while(true) {
 
 			        System.out.println("********************  Credential Menu  ********************");
-
+					System.out.println("");
 		            System.out.print("New Credential Name: ");
 		            credentialName = user.nextLine();
 
@@ -205,15 +205,90 @@ public class Main {
 		        System.out.println("");
 		        System.out.println("Credential Saved!");
 		        System.out.println("");
-		        System.out.println("1) Create new Credential");
-		        System.out.println("2) Main Menu");
+		        System.out.println("\n1) Create new Credential" + "\n2) Modify Credential" + "\n3) Main Menu");
 		        String credOption = user.nextLine();
 
 		        switch(credOption) {
 
 		            case "1":
 		                break;
-		            case "2":
+		                
+		            case "2" :
+						System.out.println("");
+						System.out.println("********************  Library  ********************");
+						System.out.println("");
+		            	newUser.displayCredentials();
+						System.out.println("");
+		            	System.out.println("Select the Credential you want to modify ");
+		            	
+		            	try {
+							int selection = Integer.parseInt(user.nextLine());
+
+					        if (selection >= 1 && selection <= newUser.getCredentialCount()) {		        	
+					        	Credential selected = newUser.getCredential(selection - 1);   	
+				            	System.out.println("\nWhat would you like to modify" +"\n1) User Name" + "\n2) Email" + "\n3) Password " + "\n4) All");
+						        String modifyOption = user.nextLine();
+						    switch(modifyOption)
+						    
+						    {
+						    
+						    case "1":
+
+						        System.out.println("Current User Name = " + selected.getCredentialUserName());
+						        System.out.print("New User Name: ");
+
+						        String newUserName = user.nextLine();
+
+						        selected.setCredentialUserName(newUserName);
+
+						        System.out.println("User Name Updated!");
+						        break;
+						    	
+						    case "2":
+
+						        System.out.println("Current Email = " + selected.getCredentialEmail());
+						        System.out.print("New Email: ");
+
+						        String newEmail = user.nextLine();
+
+						        selected.setCredentialEmail(newEmail);
+
+						        System.out.println("Email Updated!");
+						        break;
+					        	
+						    case "3":
+
+						        System.out.println("Current Password = " + selected.getCredentialPassword());
+						        System.out.print("New Password: ");
+
+						        String newPassword = user.nextLine();
+
+						        selected.setCredentialPassword(newPassword);
+
+						        System.out.println("Password Updated!");
+						        break;
+					        	
+						    case "4" :
+						    	System.out.println("User Name = " +selected.getCredentialUserName());
+					        	System.out.println("Email = " + selected.getCredentialEmail()); 
+					        	System.out.println("Password = " + selected.getCredentialPassword()); 
+					        	break;		    
+						    	}
+					        }
+						}
+		            	
+		            	
+		            	 catch (NumberFormatException e) {
+					            System.out.println("");
+
+					            System.out.println("Error: That is not a number. Please enter digits only.");			           
+					        }
+		            	break;			
+		            	
+		            	
+		            	
+		            	
+		            case "3":
 		                credentialRunning = false;
 		                break;
 		            default:
