@@ -14,6 +14,8 @@ public class User {
 			
 		}
 		
+//GET AND SET SECTION
+		
 		public String getUserName() { 
 			return userName;
 		}
@@ -37,6 +39,12 @@ public class User {
 		public void setPassword(String password) { 
 			this.password = password; 
 		}
+
+		
+		
+		
+//CREDENTIALS ARRAY SECTION 
+		
 		
 		private ArrayList<Credential> credentials = new ArrayList<Credential>(); 
 		
@@ -45,15 +53,21 @@ public class User {
 			this.credentials.add(credential);
 			
 		}
+
+		
+		
+//CREDENTIALS SECTION OF USER CODE ! 		
+		
+
+//displaying the credentials on library - main
 		
 		public void displayCredentials() { 
 			for(int i= 0; i < credentials.size() ; i++) {
-				System.out.println((1 + i + ")")+ (" ") + credentials.get(i).getCredentialName());}
-				
-				
+				System.out.println((1 + i + ")")+ (" ") + credentials.get(i).getCredentialName());
+			}
 		}
 			
-		
+//displaying the selected credentials in library 		
 		public void selectCredentials(String targetName) { 
 			for (int i= 0; i < credentials.size() ; i++) {
 				if (credentials.get(i).getCredentialName().equals(targetName)) {
@@ -61,14 +75,15 @@ public class User {
 		           System.out.println("Credential Found!");
 					return ; 
 		        }
-				
-			}
+					}
 	           System.out.println("No Credential Found!");
-
 		}
 		
+		public int getCredentialCount() {
+		    return credentials.size();
+		}
 		
-		
-
-
+		public Credential getCredential(int index) {
+		    return credentials.get(index);
+		}	
 }

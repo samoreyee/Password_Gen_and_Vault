@@ -15,6 +15,10 @@ public class Credential {
 	
 	}
 	
+	
+//GET AND SET SECTION
+	
+	
 	public String getCredentialName() {
 		return credentialName; 
 	}

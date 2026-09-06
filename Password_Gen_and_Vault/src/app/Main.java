@@ -156,16 +156,41 @@ public class Main {
 // opening up the library of the credential you made
 	//case 3
 				case "3" : 
+					System.out.println("");
+					System.out.println("********************  Library  ********************");
+					System.out.println("");
+
+
 					newUser.displayCredentials();
+				while(true) {
+					System.out.println("");
 					System.out.println("Which Credential would you like to select? ");
-					String targetName = user.nextLine(); 
-					if (targetName.isEmpty()) {
-				        System.out.println("cannot be empty.");
-				        continue;
-				    }
 					
-					newUser.selectCredentials(targetName);
-					
+				try {
+					int selection = Integer.parseInt(user.nextLine());
+
+			        if (selection >= 1 && selection <= newUser.getCredentialCount()) {
+			        	
+			        	Credential selected = newUser.getCredential(selection - 1);
+			        	
+			        	System.out.println(selected.getCredentialName().toUpperCase());
+			        	System.out.println("User Name = " +selected.getCredentialUserName());
+			        	System.out.println("Email = " + selected.getCredentialEmail()); 
+			        	System.out.println("Password = " + selected.getCredentialPassword()); 
+
+			            break;
+			        }
+			        System.out.println("Invalid selection.");
+				}
+			        catch (NumberFormatException e) {
+			            System.out.println("");
+
+			            System.out.println("Error: That is not a number. Please enter digits only.");
+			           
+			        }
+			        
+				}
+
 				break; 
 				
 //signing out of program 
