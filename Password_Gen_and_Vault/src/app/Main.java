@@ -92,6 +92,7 @@ public class Main {
 		case "1":
 		    boolean passwordRunning = true;
 		    while(passwordRunning) {
+		        System.out.println("");
 		        System.out.println("********************  Password Generator  ********************");
 		        System.out.println("");
 		        String password1 = passwordGenerator.generatePassword(20);
