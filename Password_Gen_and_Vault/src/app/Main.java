@@ -22,7 +22,7 @@ public class Main {
 		System.out.print("Input User Name: ");
 		userName = user.nextLine();
 		if (userName.isEmpty()) {
-	        System.out.print("Username cannot be empty.");
+	        System.out.print("Username cannot be empty");
 	    }
 		else {
 			break;
@@ -34,7 +34,7 @@ public class Main {
 		System.out.print("Input Email: ");
 		 userEmail = user.nextLine();
 		if (userEmail.isEmpty()) {
-	        System.out.println("Email cannot be empty.");
+	        System.out.println("Email cannot be empty");
 	    }
 		else {
 			break;
@@ -45,7 +45,7 @@ public class Main {
 		System.out.print("Input Password: ");
 		password = user.nextLine();
 		if (password.isEmpty()) {
-	        System.out.println("Password cannot be empty.");
+	        System.out.println("Password cannot be empty");
 	    }
 		else {
 			break;
@@ -76,11 +76,6 @@ public class Main {
 // the choice loop begins
 			
 		switch(option) {
-
-		
-		
-		
-		
 		
 		
 		
@@ -112,15 +107,13 @@ public class Main {
 		                passwordRunning = false;
 		                break;
 		            default:
-		                System.out.println("Invalid option.");
+		                System.out.println("Invalid option");
 		        }
 		    }
 		    break;
 	
 		    
-		    
-		    
-		    
+ 
 		    
 		    
 		    
@@ -136,11 +129,19 @@ public class Main {
 		case "2":
 
 		    boolean credentialRunning = true;
-		    while(credentialRunning) {
+		    
+		    
+		    
+		    while(credentialRunning) 
+		    
+		    {
+		    	
 		        String credentialName;
 		        String credentialUserName;
 		        String credentialEmail;
 		        String credentialPassword;
+		        
+		        
 		        while(true) {
 
 			        System.out.println("********************  Credential Menu  ********************");
@@ -149,7 +150,7 @@ public class Main {
 		            credentialName = user.nextLine();
 
 		            if (credentialName.isEmpty()) {
-		                System.out.println("Name cannot be empty.");
+		                System.out.println("Name cannot be empty");
 		            }
 		            else {
 		                break;
@@ -162,7 +163,7 @@ public class Main {
 		            credentialUserName = user.nextLine();
 
 		            if (credentialUserName.isEmpty()) {
-		                System.out.println("Username cannot be empty.");
+		                System.out.println("Username cannot be empty");
 		            }
 		            else {
 		                break;
@@ -175,7 +176,7 @@ public class Main {
 		            credentialEmail = user.nextLine();
 
 		            if (credentialEmail.isEmpty()) {
-		                System.out.println("Email cannot be empty.");
+		                System.out.println("Email cannot be empty");
 		            }
 		            else {
 		                break;
@@ -188,7 +189,7 @@ public class Main {
 		            credentialPassword = user.nextLine();
 
 		            if (credentialPassword.isEmpty()) {
-		                System.out.println("Password cannot be empty.");
+		                System.out.println("Password cannot be empty");
 		            }
 		            else {
 		                break;
@@ -201,6 +202,8 @@ public class Main {
 		            credentialEmail,
 		            credentialPassword
 		        );
+		        
+		        
 		        newUser.addCredential(newCredential);
 		        System.out.println("");
 		        System.out.println("Credential Saved!");
@@ -221,14 +224,20 @@ public class Main {
 						System.out.println("");
 		            	System.out.println("Select the Credential you want to modify ");
 		            	
-		            	try {
+		         try 
+		            	
+		            	{
+		            		
 							int selection = Integer.parseInt(user.nextLine());
 
-					        if (selection >= 1 && selection <= newUser.getCredentialCount()) {		        	
+					        if (selection >= 1 && selection <= newUser.getCredentialCount())
+					        {		        	
 					        	Credential selected = newUser.getCredential(selection - 1);   	
 				            	System.out.println("\nWhat would you like to modify" +"\n1) User Name" + "\n2) Email" + "\n3) Password " + "\n4) All");
-						        String modifyOption = user.nextLine();
-						    switch(modifyOption)
+				            	String modifyOption = user.nextLine();
+				            	
+				            	
+			     switch(modifyOption)
 						    
 						    {
 						    
@@ -241,7 +250,7 @@ public class Main {
 
 						        selected.setCredentialUserName(newUserName);
 
-						        System.out.println("User Name Updated!");
+						        System.out.println("User Name Updated");
 						        break;
 						    	
 						    case "2":
@@ -253,7 +262,8 @@ public class Main {
 
 						        selected.setCredentialEmail(newEmail);
 
-						        System.out.println("Email Updated!");
+						        System.out.println("Email Updated");
+						        
 						        break;
 					        	
 						    case "3":
@@ -265,17 +275,46 @@ public class Main {
 
 						        selected.setCredentialPassword(newPassword);
 
-						        System.out.println("Password Updated!");
+						        System.out.println("Password Updated");
 						        break;
 					        	
 						    case "4" :
 						    	System.out.println("User Name = " +selected.getCredentialUserName());
+						    	System.out.print("New User Name: ");
+
+						        String newUserName1 = user.nextLine();
+						        
+						        selected.setCredentialUserName(newUserName1);
+
 					        	System.out.println("Email = " + selected.getCredentialEmail()); 
+					        	
+					        	System.out.print("New Email: ");
+
+						        String newEmail1 = user.nextLine();
+						        
+						        selected.setCredentialEmail(newEmail1);
+
+						        
 					        	System.out.println("Password = " + selected.getCredentialPassword()); 
-					        	break;		    
+					        	System.out.print("New Password: ");
+
+						        String newPassword1 = user.nextLine();
+						        
+						        selected.setCredentialPassword(newPassword1);
+
+					        	
+						        System.out.println("Credential Changed");
+					            credentialRunning = false;
+						        break;	
+						        
+						        
+						  
+						        
 						    	}
+					       
 					        }
-						}
+						
+		            	 }
 		            	
 		            	
 		            	 catch (NumberFormatException e) {
@@ -295,6 +334,8 @@ public class Main {
 		                System.out.println("Invalid option.");
 		        }
 		    }
+		  
+
 		    break;
 		    
 		    
@@ -308,9 +349,7 @@ public class Main {
 		    
 		    
 		    
-		    
-		    
-		    
+	    
 		    
 				case "3" : 
 					
@@ -344,9 +383,7 @@ public class Main {
 				}
 				break; 
 	
-				
-				
-				
+								
 				
 				
 				
@@ -363,9 +400,7 @@ public class Main {
 				break; 
 				
 				
-				
-				
-				
+			
 				
 				
 //invalid choice 
